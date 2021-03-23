@@ -11,12 +11,22 @@ bot = commands.Bot(command_prefix='.')
 
 
 """ helper functions """
+modlog = bot.get_channel(808381181598236702)
 
 #print ready in terminal
 @bot.event
 async def on_ready():
     print ('We have logged in as {0.user}'.format(bot))
-    await bot.change_presence(activity=discord.Game("Kneipenabend WUHU!"))
+    await bot.change_presence(activity=discord.Game("Ich bin Online!"))
+
+
+#change title
+@bot.command()
+@commands.has_any_role("Admins", "Moderators")
+async def title(ctx, title):
+    await bot.change_presence(activity=discord.Game(title))
+    await modlog.send("Neuer Titel {title}, gesetzt von {ctx.author.display_name}")
+
 
 #prints bot ping
 @bot.command()
