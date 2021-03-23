@@ -18,11 +18,12 @@ async def on_ready():
     print ('We have logged in as {0.user}'.format(bot))
     await bot.change_presence(activity=discord.Game("Ich bin Online!"))
 
+#set log channel
 @bot.command
 @commands.has_role("Admins")
 async def setlog(ctx, channel_id):
     global modlog
-    modlog = bot.get_channel(808381181598236702)
+    modlog = bot.get_channel(channel_id)
     await modlog.send("modlog initialized")
 
 #change title
