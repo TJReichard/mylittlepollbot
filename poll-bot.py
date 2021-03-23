@@ -70,11 +70,6 @@ async def on_message(message):
         await message.channel.send(f'Hallo, {message.author.mention}! ')
         return
 
-    #deletes command messages in all channels
-    async for message in message.channel.history():
-        if message.content.startswith('.'):
-            await message.delete()
-
 """ end general functionality """
 
 bot.run(token)
