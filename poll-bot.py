@@ -23,7 +23,7 @@ async def on_ready():
 @commands.has_role("Admins")
 async def setlog(ctx, channel_id):
     global modlog
-    modlog = bot.get_channel(channel_id)
+    modlog = bot.get_channel(int(channel_id))
     await modlog.send("modlog initialized")
 
 #change title
