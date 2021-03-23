@@ -32,7 +32,7 @@ async def setlog(ctx, channel_id):
 async def title(ctx, title):
     await bot.change_presence(activity=discord.Game(title))
     global modlog
-    await modlog.send("Neuer Titel {title}, gesetzt von {ctx.author.display_name}")
+    await modlog.send(f"Neuer Titel {title}, gesetzt von {ctx.author.display_name}")
 
 
 #prints bot ping
