@@ -19,7 +19,7 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game("Ich bin Online!"))
 
 #set log channel
-@bot.command
+@bot.command()
 @commands.has_role("Admins")
 async def setlog(ctx, channel_id):
     global modlog
